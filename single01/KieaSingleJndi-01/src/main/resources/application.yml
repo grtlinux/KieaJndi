@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    jndi-name: jndi/mysql
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/jndi?serverTimezone=UTC
+#    username: root
+#    password: root
