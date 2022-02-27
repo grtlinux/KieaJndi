@@ -1,7 +1,60 @@
-spring:
-  datasource:
-    jndi-name: jndi/mysql
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://localhost:3306/jndi?serverTimezone=UTC
-#    username: root
-#    password: root
+
+
+# --------------------------------
+# logging
+
+# %Logger{length} : Logger name을 축약할 수 있다. {length}는 최대 자리 수, ex)logger{35}
+# %-5level : 로그 레벨, -5는 출력의 고정폭 값(5글자)
+# %msg : - 로그 메시지 (=%message)
+# ${PID:-} : 프로세스 아이디
+# %d : 로그 기록시간
+# %p : 로깅 레벨
+# %F : 로깅이 발생한 프로그램 파일명
+# %M : 로깅일 발생한 메소드의 명
+# %l : 로깅이 발생한 호출지의 정보
+# %L : 로깅이 발생한 호출지의 라인 수
+# %thread : 현재 Thread 명
+# %t : 로깅이 발생한 Thread 명
+# %c : 로깅이 발생한 카테고리
+# %C : 로깅이 발생한 클래스 명
+# %m : 로그 메시지
+# %n : 줄바꿈(new line)
+# %% : %를 출력
+# %r : 애플리케이션 시작 이후부터 로깅이 발생한 시점까지의 시간(ms)
+# 
+logging:
+  file:
+    path: logs/zotto/
+  logback.rollingpolicy:
+    max-file-size: 10MB
+    max-history: 30
+  # file.max-size: 10MB
+  # file.max-history: 30         # delete after a month
+  pattern:
+    console: "%clr(%d{HH:mm:ss} %p){magenta} - %m%n"
+    file: "%d %-5level [%-10thread] [%-30logger{30}] - %m%n"
+  level:
+    root: info
+    org.tain.*: info
+    # org.tain.mybatis.mappers: trace
+    org.tain.mybatis.mappers: off
+    # org.hibernate.SQL: info
+    org.hibernate.SQL: off
+    org.hibernate.type: off
+    # org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.hibernate.type.descriptor.sql.BasicBinder: off
+    org.hibernate.tool.*: off
+    org.thymeleaf: off
+    org.h2.server.web: off
+    
+    #org.tain.utils.TransferStrAndJson: trace
+    jdbc: off
+    jdbc.sqlonly: off
+    jdbc.sqltiming: debug
+    jdbc.audit: off
+    jdbc.resultset: off
+    jdbc.resultsettable: debug
+    jdbc.connection: off
+    
+    com.zaxxer.hikari: off
+    com.zaxxer.hikari.HikariConfig: off
