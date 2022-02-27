@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @MapperScan(basePackages = {"org.tain.jndi1.**.repository"})
 @ComponentScan(basePackages = {"org.tain.jndi1.**.service"})
+@MapperScan(basePackages = {"org.tain.jndi1.**.mappers"})
 @EnableTransactionManagement
 public class Jndi1RootContext {
 
