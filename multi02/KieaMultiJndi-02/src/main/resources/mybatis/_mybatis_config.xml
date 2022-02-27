@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/> <!-- 카멜케이스 적용 -->
+	</settings>
+
+	<!-- alias 등록 -->
+	<typeAliases>
+		<typeAlias type="org.tain.jndi1.jpa.domain.TblCust" alias="TblCust"/>
+		<typeAlias type="org.tain.jndi2.jpa.domain.TblProd" alias="TblProd"/>
+		<typeAlias type="org.tain.jndi1.mybatis.mappers.CustMapper" alias="CustMapper"/>
+		<typeAlias type="org.tain.jndi2.mybatis.mappers.ProdMapper" alias="ProdMapper"/>
+	</typeAliases>
+</configuration>
